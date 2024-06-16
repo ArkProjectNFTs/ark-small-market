@@ -11,11 +11,11 @@ import { DataTable } from "./data-table";
 
 const fetchCollection = async () => {
   const response = await fetch(
-    `${env.NEXT_PUBLIC_NFT_API_URL}/v1/tokens/0x32d99485b22f2e58c8a0206d3b3bb259997ff0db70cffd25585d7dd9a5b0546`,
+    `${env.NEXT_PUBLIC_NFT_API_URL}/v1/tokens/${env.NEXT_PUBLIC_STARKNET_NFT_CONTRACT}`,
     {
       headers: {
-        "x-api-key": env.NEXT_PUBLIC_NFT_API_KEY
-      }
+        "x-api-key": env.NEXT_PUBLIC_NFT_API_KEY,
+      },
     }
   );
 
@@ -28,7 +28,7 @@ const fetchCollection = async () => {
 
 async function fetchCollectionMarket() {
   const response = await fetch(
-    `${env.NEXT_PUBLIC_ORDERBOOK_API_URL}/tokens/collection/0x032d99485b22f2e58c8a0206d3b3bb259997ff0db70cffd25585d7dd9a5b0546`
+    `${env.NEXT_PUBLIC_ORDERBOOK_API_URL}/tokens/collection/${env.NEXT_PUBLIC_STARKNET_NFT_CONTRACT}`
   );
   if (!response.ok) {
     throw new Error("Failed to fetch data");
@@ -41,13 +41,13 @@ const Explore = () => {
     data: collectionData,
     error: collectionDataError,
     isError: collectionDataIsError,
-    isLoading: collectionDataIsLoading
+    isLoading: collectionDataIsLoading,
   }: any = useQuery("tokens", fetchCollection);
 
   const {
     data: collectionMarketData,
     error: collectionMarketError,
-    isLoading: collectionMarketIsLoading
+    isLoading: collectionMarketIsLoading,
   }: any = useQuery("collectionMarket", fetchCollectionMarket);
 
   if (collectionDataIsLoading || collectionMarketIsLoading) {

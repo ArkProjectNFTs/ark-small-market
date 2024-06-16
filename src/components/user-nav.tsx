@@ -37,19 +37,7 @@ export function UserNav() {
   return address ? (
     <div>
       <div className="flex items-center space-x-4">
-        <span className="relative flex h-9 w-9 shrink-0 overflow-hidden rounded-full">
-          <Image
-            className="aspect-square h-full w-full"
-            src="/01.png"
-            width={36}
-            height={36}
-            alt="avatar"
-          />
-        </span>
-        <div>
-          <p className="text-sm font-medium leading-none">Sofia Davis</p>
-          <p className="text-sm text-muted-foreground">{shortenedAddress}</p>
-        </div>
+        <div>{shortenedAddress}</div>
         <Button onClick={() => disconnect()} className="gap-x-2 mr-2">
           Logout
         </Button>
