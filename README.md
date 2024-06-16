@@ -24,4 +24,19 @@ NEXT_PUBLIC_BROKER_ID=0x00E4769a4d2F7F69C70951A003eBA5c32707Cef3CdfB6B27cA63567f
 Your contract address for the NFT collection you are making the marketplace for (used to gather the NFT data from the ArkProject API & also used in the mint page, adapt the mint page logic to your usecase if you change the contract or remove it):
 NEXT_PUBLIC_STARKNET_NFT_CONTRACT=0x32d99485b22f2e58c8a0206d3b3bb259997ff0db70cffd25585d7dd9a5b0546
 
+## Local development:
+
+copy the .env.example file to .env.local & fill the env variables with your own values.
+
+```bash
+cp .env.example .env.local
+```
+
+Install the dependencies & run the app:
+
+```bash
+npm install
+npm run dev
+```
+
 This app is just a demo so it's subject to bugs & some features may be missing, feel free to contribute to the project if you want to add more features or fix bugs.
