@@ -35,7 +35,7 @@
     "cmdk": "^0.2.0",
     "date-fns": "^3.3.1",
     "get-starknet-core": "^3.3.0",
-    "next": "14.0.2",
+    "next": "14.1.1",
     "next-themes": "^0.2.0",
     "react": "^18",
     "react-dom": "^18",
