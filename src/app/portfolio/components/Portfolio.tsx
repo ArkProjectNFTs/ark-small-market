@@ -5,10 +5,10 @@ import { useAccount } from "@starknet-react/core";
 import Link from "next/link";
 
 import Media from "@/components/media";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Portfolio: React.FC = () => {
   const [tokens, setTokens] = useState([]);
+
   const { address } = useAccount();
   useEffect(() => {
     const fetchData = async () => {
@@ -37,6 +37,14 @@ const Portfolio: React.FC = () => {
     };
     fetchData();
   }, [address]);
+
+  if (tokens.length === 0) {
+    return (
+      <div className="flex items-center justify-center h-[700px]">
+        <p className="text-lg text-muted-foreground">No tokens found</p>
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-6 gap-4 h-[700px]">

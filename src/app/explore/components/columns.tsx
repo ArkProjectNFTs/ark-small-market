@@ -2,7 +2,6 @@
 
 import { useAccount } from "@starknet-react/core";
 import { ColumnDef } from "@tanstack/react-table";
-import Image from "next/image";
 import { SiEthereum } from "react-icons/si";
 import { Web3 } from "web3";
 
@@ -28,7 +27,7 @@ export const columns: ColumnDef<Token>[] = [
       const imageUrl = url ? url.replace(/\.mp4$/, ".jpg") : "/missing.jpg";
       return (
         <div className="w-[40px]">
-          <Image
+          <img
             src={imageUrl}
             width="40"
             height="40"

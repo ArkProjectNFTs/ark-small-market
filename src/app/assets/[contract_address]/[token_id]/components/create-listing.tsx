@@ -69,6 +69,7 @@ const CreateListing: React.FC<OrderBookActionsProps> = ({
       return;
     }
 
+    console.log(env.NEXT_PUBLIC_BROKER_ID)
     // Prepare the data for submission, including props data
     const processedValues = {
       brokerId: env.NEXT_PUBLIC_BROKER_ID, // Assuming this is a static value or received from elsewhere
